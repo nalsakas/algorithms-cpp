@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "iostream": "cpp",
+        "iterator": "cpp",
+        "algorithm": "cpp",
+        "cmath": "cpp",
+        "cstdlib": "cpp"
+    },
+}
