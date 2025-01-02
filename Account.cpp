@@ -25,3 +25,8 @@ void Account::withdraw(double amount)
         this->amount -= amount;
     } 
 }
+
+Account::operator double()
+{
+    return this->amount;
+}
