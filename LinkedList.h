@@ -1,19 +1,18 @@
-#include <iostream>
+#ifndef __LINKEDLIST__
+#define __LINKEDLIST__
 #include <vector>
-#include <memory>
+#include <iostream>
 using namespace std;
 
 template <class T>
-class Node
+struct Node
 {
-public:
     Node(T val)
     {
         this->val = val;
     }
-
     T val;
-    Node<T>* next = nullptr;
+    Node* next = nullptr;
 };
 
 template <class T>
@@ -109,60 +108,4 @@ vector<T>* getList(Node<T>* node)
     return collect;
 }
 
-int main()
-{
-    Node<char>* a = new Node<char>('a');
-    Node<char>* b = new Node<char>('b');
-    Node<char>* c = new Node<char>('c');
-    Node<char>* d = new Node<char>('d');
-    Node<char>* e = new Node<char>('e');
-    Node<char>* f = new Node<char>('f');
-    auto h = new Node<char>('h');
-    auto k = new Node<char>('k');
-    auto l = new Node<char>('l');
-
-    auto head = a;
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    c->next = e;
-    e->next = f;
-
-    cout << "Iterate..." << endl;
-    iterateList<char>(head);
-
-    cout << "Find items..." << endl;
-    cout << (findList<char>(a, 'f') ? "True" : "False") << endl;
-    cout << (findList<char>(a, 'g') ? "True" : "False") << endl;
-    
-    cout << "Iterate on reverse list..." << endl;
-    head = reverseList<char>(a);
-    iterateList<char>(head);
-    head = reverseList<char>(head);
-
-    cout << "Add new (char) item..." << endl;
-    addItemList<char>(head, 'g');
-    iterateList<char>(head);
-
-    cout << "Add new (Node) item..." << endl;
-    addItemList<char>(head, h);
-    addItemList<char>(head, k);
-    addItemList<char>(head, l);
-    iterateList<char>(head);
-
-
-    cout << "Iterate..." << endl;
-    auto list = getList<char>(head);
-    for (int i = 0; i < list->size(); i++)
-    {
-        cout << list->at(i) << endl;
-    }
-
-    cout << "Iterate..." << endl;
-    for (char c : *getList<char>(head))
-    {
-        cout << c << "\n";
-    }
-
-    return 0;
-}
+#endif

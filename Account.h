@@ -6,9 +6,10 @@ private:
     double amount = 0;
 
 public:
-    Account(double amount);
+    explicit Account(double amount);
     void deposit(double amount);
     double getBalance(void);
     void withdraw(double amount);
+    operator double();
 };
 #endif
