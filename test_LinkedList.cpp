@@ -20,7 +20,7 @@ TEST_CASE( "LinkedList tests", "[LinkedList]" ) {
     e->next = f;
 
     //Iterate list
-    vector<char> target = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::vector<char> target = {'a', 'b', 'c', 'd', 'e', 'f'};
     REQUIRE(*getList<char>(head) == target);
 
     //Check list content

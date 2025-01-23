@@ -1,5 +1,6 @@
 #include "String2.h"
 #include <cstring>
+using namespace std;
 
 String2::String2()
 {

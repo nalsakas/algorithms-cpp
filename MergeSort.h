@@ -1,17 +1,14 @@
-#include <iostream>
+#pragma once
 #include <vector>
-using namespace std;
 
-#include "Sorting.h"
-
-void mergeSort(vector<int>& array)
+void mergeSort(std::vector<int>& array)
 {
     if (array.size() <= 1) return;
 
     int middle = array.size() / 2;
 
-    vector<int> left(array.begin(), array.begin() + middle);
-    vector<int> right(array.begin() + middle, array.end());
+    std::vector<int> left(array.begin(), array.begin() + middle);
+    std::vector<int> right(array.begin() + middle, array.end());
 
     mergeSort(left);
     mergeSort(right);

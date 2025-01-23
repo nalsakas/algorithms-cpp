@@ -2,7 +2,6 @@
 #define __LINKEDLIST__
 #include <vector>
 #include <iostream>
-using namespace std;
 
 template <class T>
 struct Node
@@ -22,7 +21,7 @@ void iterateList(Node<T>* root)
 
     while (current != nullptr)
     {
-        cout << current->val << endl;
+        std::cout << current->val << std::endl;
         current = current->next;
     }
 }
@@ -95,14 +94,14 @@ Node<T>* addItemList(Node<T>* root, Node<T>* node)
 }
 
 template<class T>
-vector<T>* getList(Node<T>* node)
+std::vector<T>* getList(Node<T>* node)
 {
     if (node == nullptr)
     {
-        return new vector<T>;
+        return new std::vector<T>;
     }
 
-    vector<T>* collect = getList<T>(node->next);
+    std::vector<T>* collect = getList<T>(node->next);
     //collect->push_back(node->val);
     collect->insert(collect->begin(), node->val);
     return collect;

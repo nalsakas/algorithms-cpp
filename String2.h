@@ -1,7 +1,5 @@
-#ifndef __String2__
-#define __String2__
+#pragma once
 #include <iostream>
-using namespace std;
 
 class String2
 {
@@ -14,8 +12,8 @@ public:
     String2& operator=(String2&& str);
     bool operator==(const char* str);
     bool operator==(const String2& str);
-    friend ostream& operator<<(ostream& out, const String2& str);
-    friend istream& operator>>(istream& in, String2& str);
+    friend std::ostream& operator<<(std::ostream& out, const String2& str);
+    friend std::istream& operator>>(std::istream& in, String2& str);
     int length() const;
     ~String2();
 
@@ -23,4 +21,3 @@ private:
     char *data;
     int size;
 };
-#endif
