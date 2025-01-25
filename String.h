@@ -1,7 +1,11 @@
-#pragma once
+//#pragma once
+#ifndef __MY_STRING__
+#define __MY_STRING__
 
 #include <iostream>
 #include <vector>
+#include <numeric>
+#include <string>
 
 namespace my
 {
@@ -57,7 +61,6 @@ namespace my
 
         friend std::ostream &operator<<(std::ostream &out, const String &str)
         {
-            if (str.length() == 0) return out;
             for (int i = 0; i < str.length(); i++)
             {
                 out << str.data[i];
@@ -69,7 +72,7 @@ namespace my
         {
             char line[255];
             in.getline(line, 254);
-            str = String(line);
+            str = line;
             return in;
         }
 
@@ -78,7 +81,14 @@ namespace my
             return this->data.size();
         }
 
+        std::vector<char> getData() const
+        {
+            return this->data;
+        }
+
     private:
         std::vector<char> data;
     };
 }
+
+#endif

@@ -20,9 +20,8 @@ project(Algorithms-cpp)
 list(APPEND CMAKE_PREFIX_PATH "C:/Catch2")
 find_package(Catch2 REQUIRED)
 
-add_executable(test_String2 test_String2.cpp String2.cpp)
-target_include_directories(test_String2 PUBLIC "${CMAKE_SOURCE_DIR}")
-target_link_libraries(test_String2 PRIVATE Catch2::Catch2WithMain)
+add_executable(test_String test_String.cpp)
+target_include_directories(test_String PUBLIC "${CMAKE_SOURCE_DIR}" PUBLIC "${CMAKE_BINARY_DIR}")
 
 add_executable(test_Account test_Account.cpp Account.cpp)
 target_include_directories(test_Account PUBLIC "${CMAKE_SOURCE_DIR}")
